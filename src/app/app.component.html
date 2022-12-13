@@ -1,10 +1,11 @@
-<div class="container mt-4">
+<!-- <div class="container mt-4">
   <h1>Main App</h1>
   <app-tabs-container>
-    <app-tab tabTitle="Home">Tab content 1</app-tab>
-    <app-tab tabTitle="Contact">Tab content 2</app-tab>
-    <app-tab tabTitle="About">Tab content 3</app-tab>
+    <app-tab *ngFor="let tab of tabs" [tabTitle]="tab.tabTitle">
+      {{ tab.content }}
+    </app-tab>
   </app-tabs-container>
+</div> -->
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>
