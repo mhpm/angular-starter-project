@@ -19,9 +19,9 @@ export class AppComponent {
       content: 'About Connent',
     },
     {
-      tabTitle: 'About',
+      tabTitle: 'Daigram',
       active: false,
-      content: 'About Connent',
+      content: 'Diagram Flow Content',
     },
   ];
 }
