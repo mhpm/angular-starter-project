@@ -14,8 +14,9 @@ import { FormControl } from '@angular/forms';
 })
 export class InputComponent implements OnChanges {
   @Input() control: FormControl = new FormControl();
+  @Input() type = 'text';
+  @Input() placeholder = '';
+  @Input() format = '';
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.control.errors);
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 }

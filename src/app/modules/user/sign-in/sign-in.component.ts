@@ -7,11 +7,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
-  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  password = new FormControl('');
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', Validators.required);
 
-  registerForm = new FormGroup({
-    name: this.name,
+  singInForm = new FormGroup({
+    email: this.email,
     password: this.password,
   });
 }

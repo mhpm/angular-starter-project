@@ -1,11 +1,12 @@
 <ng-container>
   <button
-    class="w-full bg-primary-500 hover:bg-primary-400 shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+    class="disabled:opacity-50 w-full bg-primary-500 hover:bg-primary-400 shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
     [class.bg-warning-500]="variant === 'warning'"
     [class.hover:bg-warning-400]="variant === 'warning'"
     [class.bg-danger-500]="variant === 'danger'"
     [class.hover:bg-danger-400]="variant === 'danger'"
     type="button"
+    [disabled]="disabled"
   >
     {{ label }}
   </button>

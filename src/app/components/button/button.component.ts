@@ -16,4 +16,5 @@ const variant_buttons: any = {
 export class ButtonComponent {
   @Input() label: string = 'label';
   @Input() variant: string = 'primary';
+  @Input() disabled = false;
 }

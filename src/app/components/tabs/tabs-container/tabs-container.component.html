@@ -3,7 +3,7 @@
     <a
       class="block rounded py-3 px-4 transition font-bold"
       [ngClass]="{
-        'hover:text-primary-400': !tab.active,
+        'hover:text-primary-400 text-secondary-500': !tab.active,
         'hover:text-white text-white bg-secondary-400': tab.active
       }"
       (click)="selectTab(tab)"
