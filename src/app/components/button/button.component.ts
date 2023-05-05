@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 const variant_buttons: any = {
   primary: 'teal',
@@ -17,4 +17,9 @@ export class ButtonComponent {
   @Input() label: string = 'label';
   @Input() variant: string = 'primary';
   @Input() disabled = false;
+  @Output() onClick = new EventEmitter<any>();
+
+  onClickButton(event: any) {
+    this.onClick.emit(event);
+  }
 }

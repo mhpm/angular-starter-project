@@ -6,6 +6,7 @@ import { TabComponent } from './tabs/tab/tab.component';
 import { ButtonComponent } from './button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     TabsContainerComponent,
     TabComponent,
     ButtonComponent,
+    AlertComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective, NgxMaskPipe],
   exports: [
@@ -20,6 +22,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     TabsContainerComponent,
     TabComponent,
     ButtonComponent,
+    AlertComponent,
   ],
   providers: [provideNgxMask()],
 })

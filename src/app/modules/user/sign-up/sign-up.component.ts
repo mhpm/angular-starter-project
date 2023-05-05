@@ -18,6 +18,10 @@ export class SignUpComponent {
   password = new FormControl('', [Validators.required]);
   confirm_password = new FormControl('', [Validators.required]);
 
+  showAlert = false;
+  alertMsg = '';
+  alertColor = 'blue';
+
   signUnForm = new FormGroup({
     name: this.name,
     email: this.email,
@@ -26,4 +30,13 @@ export class SignUpComponent {
     password: this.password,
     confirm_password: this.confirm_password,
   });
+
+  onSignUp(): void {
+    this.showAlert = true;
+    this.alertMsg = 'Please wait! Your account is being created.';
+
+    setTimeout(() => {
+      this.showAlert = false;
+    }, 3000);
+  }
 }

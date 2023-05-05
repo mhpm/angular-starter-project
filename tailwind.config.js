@@ -3,6 +3,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./src/**/*.{html,scss,ts}"],
+  safelist: ["bg-blue-400", "bg-green-400", "bg-red-400"],
   theme: {
     colors: {
       ...colors,

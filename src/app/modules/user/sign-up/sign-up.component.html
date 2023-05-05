@@ -1,3 +1,4 @@
+<app-alert *ngIf="showAlert" [color]="alertColor">{{ alertMsg }}</app-alert>
 <form [formGroup]="signUnForm" class="w-full pt-5">
   <div class="mb-5">
     <label class="block text-secondary-500 font-bold mb-1" for="name">
@@ -58,7 +59,8 @@
   </div>
   <div class="mt-8">
     <app-button
-      [disabled]="signUnForm.invalid"
+      [disabled]="!signUnForm.invalid"
+      (onClick)="onSignUp()"
       variant="primary"
       label="Sign Up"
     ></app-button>
