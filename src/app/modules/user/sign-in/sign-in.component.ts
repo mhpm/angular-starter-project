@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,11 +6,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', Validators.required);
+  credentials = {
+    email: '',
+    password: '',
+  };
 
-  singInForm = new FormGroup({
-    email: this.email,
-    password: this.password,
-  });
+  onSignIn() {
+    console.log(this.credentials);
+  }
 }

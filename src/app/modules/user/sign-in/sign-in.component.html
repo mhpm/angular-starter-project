@@ -1,25 +1,54 @@
-<form class="pt-5">
+<form class="pt-5" #signInForm="ngForm">
   <div class="mb-5">
-    <label class="block text-secondary-500 font-bold mb-1" for="name">
+    <label class="block text-secondary-500 font-bold mb-1" for="email">
       E-mail
     </label>
-    <app-input
-      [control]="email"
+    <input
+      #email="ngModel"
       placeholder="Enter email"
       type="email"
-    ></app-input>
+      class="input"
+      [(ngModel)]="credentials.email"
+      name="email"
+      pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      required
+    />
+    <p
+      *ngIf="email.errors && email.touched && email.dirty"
+      class="text-red-400"
+    >
+      Email is invalid
+    </p>
   </div>
   <div class="mb-5">
-    <label class="block text-secondary-500 font-bold mb-1" for="">
+    <label class="block text-secondary-500 font-bold mb-1" for="password">
       Password
     </label>
-    <app-input
-      [control]="password"
+    <input
+      ngModel
+      #password="ngModel"
+      class="input"
       type="password"
       placeholder="********"
-    ></app-input>
+      [(ngModel)]="credentials.password"
+      name="password"
+      required
+    />
+    <p
+      *ngIf="password.errors && password.touched && password.dirty"
+      class="text-red-400"
+    >
+      Password is invalid
+    </p>
   </div>
   <div class="mt-8">
-    <app-button variant="primary" label="Sign In"></app-button>
+    <app-button
+      [disabled]="!signInForm.valid"
+      variant="primary"
+      label="Sign In"
+      (onClick)="onSignIn()"
+    ></app-button>
   </div>
 </form>
+
+<div>{{ signInForm.valid }}</div>
